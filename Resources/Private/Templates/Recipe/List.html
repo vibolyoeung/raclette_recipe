@@ -1,59 +1,18 @@
 
 <f:layout name="Default" />
 
-This Template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
 <f:section name="main">
-<h1>Listing for Recipe</h1>
-
-<f:flashMessages renderMode="div" />
-
-<table  class="tx_racletterecipe" >
-	<tr>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.title" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.portions" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.ingredients" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.preparation" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.nutrition" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.image_big" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.image_thumb" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.recipe_score" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.rate_hit" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.date" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.show_on_start_page" /></th>
-		<th><f:translate key="tx_racletterecipe_domain_model_recipe.author" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
+<div class="tx_racletterecipe recipies shopitems">
 	<f:for each="{recipes}" as="recipe">
-		<tr>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.portions}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.ingredients}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.preparation}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.nutrition}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.imageBig.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.imageThumb.originalResource.name}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.recipeScore}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.rateHit}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.date -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.showOnStartPage}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.author}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{recipe : recipe}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{recipe : recipe}">Delete</f:link.action></td>
-		</tr>
+		<div class="shopitem col-md-3">
+			<div class="item">
+				<f:image src="{recipe.imageThumb.originalResource.publicUrl}" />
+				<div class="con">
+					<h3><f:link.action action="show" arguments="{recipe : recipe}"> {recipe.title}</f:link.action></h3>
+					<div class="rating r{recipe.recipeScore}_{recipe.notRateStars}"></div>
+				</div>
+			</div>
+		</div>
 	</f:for>
-</table>
-
-<f:link.action action="new">New Recipe</f:link.action>
+</div>
 </f:section>

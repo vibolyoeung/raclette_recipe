@@ -32,6 +32,8 @@ namespace Reclette\RacletteRecipe\Domain\Model;
  */
 class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
+	const RATE_NUMBER = 5;
+
 	/**
 	 * title
 	 *
@@ -386,6 +388,16 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setAuthor($author) {
 		$this->author = $author;
+	}
+
+
+	/**
+	 * Return the number of not rate stars
+	 *
+	 * @return integer
+	 */
+	public function getNotRateStars() {
+		return $this::RATE_NUMBER - $this->getRecipeScore();
 	}
 
 	/**
