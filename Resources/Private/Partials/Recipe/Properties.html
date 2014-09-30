@@ -1,0 +1,99 @@
+
+<table class="tx-raclette-recipe" >
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.title" />
+		</td>
+		<td>
+		{recipe.title}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.portions" />
+		</td>
+		<td>
+		{recipe.portions}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.ingredients" />
+		</td>
+		<td>
+		{recipe.ingredients}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.preparation" />
+		</td>
+		<td>
+		{recipe.preparation}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.nutrition" />
+		</td>
+		<td>
+		{recipe.nutrition}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.image_big" />
+		</td>
+		<td>
+				<f:image src="{recipe.imageBig.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.image_thumb" />
+		</td>
+		<td>
+				<f:image src="{recipe.imageThumb.originalResource.publicUrl}" width="200"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.recipe_score" />
+		</td>
+		<td>
+		{recipe.recipeScore}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.rate_hit" />
+		</td>
+		<td>
+		{recipe.rateHit}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.date" />
+		</td>
+		<td>
+		{recipe.date -> f:format.date()}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.show_on_start_page" />
+		</td>
+		<td>
+		{recipe.showOnStartPage}
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<f:translate key="tx_racletterecipe_domain_model_recipe.author" />
+		</td>
+		<td>
+		{recipe.author}
+		</td>
+	</tr>
+</table>

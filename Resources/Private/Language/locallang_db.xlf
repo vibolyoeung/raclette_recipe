@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-30T11:00:03Z" product-name="raclette_recipe">
+		<header/>
+		<body>
+			<trans-unit id="tx_racletterecipe_domain_model_categorypreparation">
+				<source>Category Preparation</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_categorypreparation.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_categorypreparation.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_cetegoryingredients">
+				<source>Cetegory Ingredients</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_cetegoryingredients.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_cetegoryingredients.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe">
+				<source>Recipe</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.portions">
+				<source>Portions</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.ingredients">
+				<source>Ingredients</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.preparation">
+				<source>Preparation</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.nutrition">
+				<source>Nutrition</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.image_big">
+				<source>Image Big</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.image_thumb">
+				<source>Image Thumb</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.recipe_score">
+				<source>Recipe Score</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.rate_hit">
+				<source>Rate Hit</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.show_on_start_page">
+				<source>Show On Start Page</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.author">
+				<source>Author</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.category_preparation">
+				<source>Category Preparation</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe_domain_model_recipe.category_ingredients">
+				<source>Category Ingredients</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

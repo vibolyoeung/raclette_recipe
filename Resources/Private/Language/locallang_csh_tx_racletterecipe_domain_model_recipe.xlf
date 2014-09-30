@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-30T11:00:03Z" product-name="raclette_recipe">
+		<header/>
+		<body>
+			<trans-unit id="title.description">
+				<source>title</source>
+			</trans-unit>
+			<trans-unit id="portions.description">
+				<source>portions</source>
+			</trans-unit>
+			<trans-unit id="ingredients.description">
+				<source>ingredients</source>
+			</trans-unit>
+			<trans-unit id="preparation.description">
+				<source>preparation</source>
+			</trans-unit>
+			<trans-unit id="nutrition.description">
+				<source>nutrition</source>
+			</trans-unit>
+			<trans-unit id="image_big.description">
+				<source>imageBig</source>
+			</trans-unit>
+			<trans-unit id="image_thumb.description">
+				<source>imageThumb</source>
+			</trans-unit>
+			<trans-unit id="recipe_score.description">
+				<source>recipeScore</source>
+			</trans-unit>
+			<trans-unit id="rate_hit.description">
+				<source>rateHit</source>
+			</trans-unit>
+			<trans-unit id="date.description">
+				<source>date</source>
+			</trans-unit>
+			<trans-unit id="show_on_start_page.description">
+				<source>showOnStartPage</source>
+			</trans-unit>
+			<trans-unit id="author.description">
+				<source>author</source>
+			</trans-unit>
+			<trans-unit id="category_preparation.description">
+				<source>categoryPreparation</source>
+			</trans-unit>
+			<trans-unit id="category_ingredients.description">
+				<source>categoryIngredients</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
