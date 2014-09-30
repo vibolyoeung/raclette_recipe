@@ -83,7 +83,7 @@
 
                     ]
                 },
-                "name": "CetegoryIngredients",
+                "name": "CategoryIngredients",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,
@@ -374,7 +374,7 @@
         }
     ],
     "log": {
-        "last_modified": "2014-09-30 11:00",
+        "last_modified": "2014-09-30 11:23",
         "extension_builder_version": "6.2.0",
         "be_user": " (1)"
     }

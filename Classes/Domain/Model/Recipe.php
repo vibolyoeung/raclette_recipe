@@ -126,7 +126,7 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * categoryIngredients
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CategoryIngredients>
 	 */
 	protected $categoryIngredients = NULL;
 
@@ -428,29 +428,29 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	}
 
 	/**
-	 * Adds a CetegoryIngredients
+	 * Adds a CategoryIngredients
 	 *
-	 * @param \Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients $categoryIngredient
+	 * @param \Reclette\RacletteRecipe\Domain\Model\CategoryIngredients $categoryIngredient
 	 * @return void
 	 */
-	public function addCategoryIngredient(\Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients $categoryIngredient) {
+	public function addCategoryIngredient(\Reclette\RacletteRecipe\Domain\Model\CategoryIngredients $categoryIngredient) {
 		$this->categoryIngredients->attach($categoryIngredient);
 	}
 
 	/**
-	 * Removes a CetegoryIngredients
+	 * Removes a CategoryIngredients
 	 *
-	 * @param \Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients $categoryIngredientToRemove The CetegoryIngredients to be removed
+	 * @param \Reclette\RacletteRecipe\Domain\Model\CategoryIngredients $categoryIngredientToRemove The CategoryIngredients to be removed
 	 * @return void
 	 */
-	public function removeCategoryIngredient(\Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients $categoryIngredientToRemove) {
+	public function removeCategoryIngredient(\Reclette\RacletteRecipe\Domain\Model\CategoryIngredients $categoryIngredientToRemove) {
 		$this->categoryIngredients->detach($categoryIngredientToRemove);
 	}
 
 	/**
 	 * Returns the categoryIngredients
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients> $categoryIngredients
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CategoryIngredients> $categoryIngredients
 	 */
 	public function getCategoryIngredients() {
 		return $this->categoryIngredients;
@@ -459,7 +459,7 @@ class Recipe extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the categoryIngredients
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients> $categoryIngredients
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Reclette\RacletteRecipe\Domain\Model\CategoryIngredients> $categoryIngredients
 	 * @return void
 	 */
 	public function setCategoryIngredients(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categoryIngredients) {

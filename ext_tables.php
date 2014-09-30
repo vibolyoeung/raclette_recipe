@@ -40,11 +40,11 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_categorypreparation'] = array(
 	),
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_racletterecipe_domain_model_cetegoryingredients', 'EXT:raclette_recipe/Resources/Private/Language/locallang_csh_tx_racletterecipe_domain_model_cetegoryingredients.xlf');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_racletterecipe_domain_model_cetegoryingredients');
-$GLOBALS['TCA']['tx_racletterecipe_domain_model_cetegoryingredients'] = array(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_racletterecipe_domain_model_categoryingredients', 'EXT:raclette_recipe/Resources/Private/Language/locallang_csh_tx_racletterecipe_domain_model_categoryingredients.xlf');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_racletterecipe_domain_model_categoryingredients');
+$GLOBALS['TCA']['tx_racletterecipe_domain_model_categoryingredients'] = array(
 	'ctrl' => array(
-		'title'	=> 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_cetegoryingredients',
+		'title'	=> 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_categoryingredients',
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
@@ -64,8 +64,8 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_cetegoryingredients'] = array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'title,description,',
-		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/CetegoryIngredients.php',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_racletterecipe_domain_model_cetegoryingredients.gif'
+		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/CategoryIngredients.php',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_racletterecipe_domain_model_categoryingredients.gif'
 	),
 );
 

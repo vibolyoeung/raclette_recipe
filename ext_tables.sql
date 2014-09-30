@@ -39,9 +39,9 @@ CREATE TABLE tx_racletterecipe_domain_model_categorypreparation (
 );
 
 #
-# Table structure for table 'tx_racletterecipe_domain_model_cetegoryingredients'
+# Table structure for table 'tx_racletterecipe_domain_model_categoryingredients'
 #
-CREATE TABLE tx_racletterecipe_domain_model_cetegoryingredients (
+CREATE TABLE tx_racletterecipe_domain_model_categoryingredients (
 
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
@@ -144,9 +144,9 @@ CREATE TABLE tx_racletterecipe_recipe_categorypreparation_mm (
 );
 
 #
-# Table structure for table 'tx_racletterecipe_recipe_cetegoryingredients_mm'
+# Table structure for table 'tx_racletterecipe_recipe_categoryingredients_mm'
 #
-CREATE TABLE tx_racletterecipe_recipe_cetegoryingredients_mm (
+CREATE TABLE tx_racletterecipe_recipe_categoryingredients_mm (
 	uid_local int(11) unsigned DEFAULT '0' NOT NULL,
 	uid_foreign int(11) unsigned DEFAULT '0' NOT NULL,
 	sorting int(11) unsigned DEFAULT '0' NOT NULL,

@@ -381,7 +381,7 @@ class RecipeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function getCategoryIngredientsReturnsInitialValueForCetegoryIngredients() {
+	public function getCategoryIngredientsReturnsInitialValueForCategoryIngredients() {
 		$newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$this->assertEquals(
 			$newObjectStorage,
@@ -392,8 +392,8 @@ class RecipeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
 	 * @test
 	 */
-	public function setCategoryIngredientsForObjectStorageContainingCetegoryIngredientsSetsCategoryIngredients() {
-		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients();
+	public function setCategoryIngredientsForObjectStorageContainingCategoryIngredientsSetsCategoryIngredients() {
+		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CategoryIngredients();
 		$objectStorageHoldingExactlyOneCategoryIngredients = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 		$objectStorageHoldingExactlyOneCategoryIngredients->attach($categoryIngredient);
 		$this->subject->setCategoryIngredients($objectStorageHoldingExactlyOneCategoryIngredients);
@@ -409,7 +409,7 @@ class RecipeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function addCategoryIngredientToObjectStorageHoldingCategoryIngredients() {
-		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients();
+		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CategoryIngredients();
 		$categoryIngredientsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('attach'), array(), '', FALSE);
 		$categoryIngredientsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($categoryIngredient));
 		$this->inject($this->subject, 'categoryIngredients', $categoryIngredientsObjectStorageMock);
@@ -421,7 +421,7 @@ class RecipeTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	 * @test
 	 */
 	public function removeCategoryIngredientFromObjectStorageHoldingCategoryIngredients() {
-		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CetegoryIngredients();
+		$categoryIngredient = new \Reclette\RacletteRecipe\Domain\Model\CategoryIngredients();
 		$categoryIngredientsObjectStorageMock = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array('detach'), array(), '', FALSE);
 		$categoryIngredientsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($categoryIngredient));
 		$this->inject($this->subject, 'categoryIngredients', $categoryIngredientsObjectStorageMock);
