@@ -3,16 +3,35 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+$ll = 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:';
+
 $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, portions, ingredients, preparation, nutrition, image_big, image_thumb, recipe_score, rate_hit, date, show_on_start_page, author, category_preparation, category_ingredients',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, portions, ingredients, preparation;;;richtext:rte_transform[mode=ts_links], nutrition, image_big, image_thumb, recipe_score, rate_hit, date, show_on_start_page, author, category_preparation, category_ingredients, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array(
+			'showitem' => 'l10n_parent, l10n_diffsource,
+				title;;paletteCore,;;;;2-2-2,
+			 	author,
+			 	date,
+			 	portions,
+			 	ingredients;;;richtext:rte_transform[mode=ts_links],
+			 	preparation;;;richtext:rte_transform[mode=ts_links],
+			 	nutrition,
+			 	recipe_score,
+			 	rate_hit,
+			 	--div--;' . $ll . 'tx_racletterecipe.tabs.category,category_preparation,category_ingredients,
+			 	--div--;' . $ll . 'tx_racletterecipe.tabs.image,image_thumb,image_big,
+			 	--div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime,'
+		),
 	),
 	'palettes' => array(
-		'1' => array('showitem' => ''),
+		'paletteCore' => array(
+			'showitem' => 'show_on_start_page, sys_language_uid, hidden,',
+			'canNotCollapse' => FALSE
+		),
 	),
 	'columns' => array(
 	
@@ -99,40 +118,50 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 
 		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.title',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'required,trim'
 			),
 		),
 		'portions' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.portions',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.portions',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
-				'rows' => 15,
+				'rows' => 3,
 				'eval' => 'trim'
 			)
 		),
 		'ingredients' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.ingredients',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.ingredients',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
-				'rows' => 15,
-				'eval' => 'trim'
+				'rows' => 5,
+				'eval' => 'trim',
+				'wizards' => array(
+					'RTE' => array(
+						'icon' => 'wizard_rte2.gif',
+						'notNewRecords'=> 1,
+						'RTEonly' => 1,
+						'script' => 'wizard_rte.php',
+						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
+						'type' => 'script'
+					)
+				)
 			)
 		),
 		'preparation' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.preparation',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.preparation',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
-				'rows' => 15,
+				'rows' => 5,
 				'eval' => 'trim',
 				'wizards' => array(
 					'RTE' => array(
@@ -148,16 +177,17 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'nutrition' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.nutrition',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.nutrition',
 			'config' => array(
-				'type' => 'input',
-				'size' => 30,
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 3,
 				'eval' => 'trim'
 			),
 		),
 		'image_big' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.image_big',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.image_big',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'imageBig',
 				array('maxitems' => 1),
@@ -166,7 +196,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'image_thumb' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.image_thumb',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.image_thumb',
 			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 				'imageThumb',
 				array('maxitems' => 1),
@@ -175,7 +205,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'recipe_score' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.recipe_score',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.recipe_score',
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
@@ -184,7 +214,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'rate_hit' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.rate_hit',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.rate_hit',
 			'config' => array(
 				'type' => 'input',
 				'size' => 4,
@@ -193,7 +223,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'date' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.date',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.date',
 			'config' => array(
 				'type' => 'input',
 				'size' => 10,
@@ -204,7 +234,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'show_on_start_page' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.show_on_start_page',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.show_on_start_page',
 			'config' => array(
 				'type' => 'check',
 				'default' => 0
@@ -212,7 +242,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'author' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.author',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.author',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
@@ -221,7 +251,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'category_preparation' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.category_preparation',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.category_preparation',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_racletterecipe_domain_model_categorypreparation',
@@ -257,7 +287,7 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_recipe'] = array(
 		),
 		'category_ingredients' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_recipe.category_ingredients',
+			'label' => $ll . 'tx_racletterecipe_domain_model_recipe.category_ingredients',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_racletterecipe_domain_model_categoryingredients',

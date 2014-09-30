@@ -3,6 +3,12 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2014-09-30T11:23:45Z" product-name="raclette_recipe">
 		<header/>
 		<body>
+			<trans-unit id="tx_racletterecipe.tabs.category">
+				<source>Categories</source>
+			</trans-unit>
+			<trans-unit id="tx_racletterecipe.tabs.image">
+				<source>Images</source>
+			</trans-unit>
 			<trans-unit id="tx_racletterecipe_domain_model_categorypreparation">
 				<source>Category Preparation</source>
 			</trans-unit>

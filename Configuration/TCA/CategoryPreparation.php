@@ -3,16 +3,21 @@ if (!defined ('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
+$ll = 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:';
+
 $GLOBALS['TCA']['tx_racletterecipe_domain_model_categorypreparation'] = array(
 	'ctrl' => $GLOBALS['TCA']['tx_racletterecipe_domain_model_categorypreparation']['ctrl'],
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, description',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, description, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
+		'1' => array('showitem' => 'l10n_parent, l10n_diffsource, title;;paletteCore;;;;2-2-2, description, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'),
 	),
 	'palettes' => array(
-		'1' => array('showitem' => ''),
+		'paletteCore' => array(
+			'showitem' => 'sys_language_uid, hidden,',
+			'canNotCollapse' => TRUE
+		),
 	),
 	'columns' => array(
 	
@@ -99,20 +104,20 @@ $GLOBALS['TCA']['tx_racletterecipe_domain_model_categorypreparation'] = array(
 
 		'title' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_categorypreparation.title',
+			'label' => $ll .'tx_racletterecipe_domain_model_categorypreparation.title',
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim'
+				'eval' => 'required,trim'
 			),
 		),
 		'description' => array(
 			'exclude' => 1,
-			'label' => 'LLL:EXT:raclette_recipe/Resources/Private/Language/locallang_db.xlf:tx_racletterecipe_domain_model_categorypreparation.description',
+			'label' => $ll .'tx_racletterecipe_domain_model_categorypreparation.description',
 			'config' => array(
 				'type' => 'text',
 				'cols' => 40,
-				'rows' => 15,
+				'rows' => 3,
 				'eval' => 'trim'
 			)
 		),

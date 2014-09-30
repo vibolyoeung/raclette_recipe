@@ -90,7 +90,7 @@ CREATE TABLE tx_racletterecipe_domain_model_recipe (
 	portions text NOT NULL,
 	ingredients text NOT NULL,
 	preparation text NOT NULL,
-	nutrition varchar(255) DEFAULT '' NOT NULL,
+	nutrition text NOT NULL,
 	image_big int(11) unsigned NOT NULL default '0',
 	image_thumb int(11) unsigned NOT NULL default '0',
 	recipe_score int(11) DEFAULT '0' NOT NULL,
